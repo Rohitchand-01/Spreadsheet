@@ -32,7 +32,7 @@ const assignedTo = ['Raj Verma', 'Sara Ali', 'John Wick', 'Maya Nair', 'Dev Meht
 const priorities = ['High', 'Medium', 'Low']
 const dueDates = ['30-11-2024', '10-11-2024', '25-12-2024', '15-01-2025', '31-01-2025']
 const values = ['$1,200', '$900', '$1,500', '$2,000', '$800']
-const remarks = ['', '', '', '', '']
+const remarks = ['Urgent task', 'Follow-up needed', 'On hold', 'Review in progress', 'Ready for delivery']
 
 const statusStyles = {
   'In-process': 'bg-[#FFF3D6] text-[#D29500]',
@@ -137,7 +137,7 @@ const Excel = () => {
           <div className="flex items-center justify-center bg-[#EEEEEE] w-[122px] h-[46px] border border-gray-300">
             <FaPlus className="text-gray-500" />
           </div>
-          <div className="bg-[#EEEEEE] w-[122px] h-[42px] border border-gray-300 flex items-center justify-center font-semibold text-gray-500">
+          <div className="bg-[#EEEEEE] w-[124px] h-[42px] border border-gray-300 flex items-center justify-center font-semibold text-gray-500">
         
           </div>
         </div>

@@ -35,10 +35,10 @@ const values = ['$1,200', '$900', '$1,500', '$2,000', '$800']
 const remarks = ['Urgent task', 'Follow-up needed', 'On hold', 'Review in progress', 'Ready for delivery']
 
 const statusStyles = {
-  'In-process': 'bg-[#FFF3D6] text-[#D29500]',
-  'Complete': 'bg-[#D3F2E3] text-[#2E8B57]',
-  'Blocked': 'bg-[#FFE1DE] text-[#C0392B]',
-  'Need to start': 'bg-[#E2E8F0] text-[#3C4F69]'
+  'In-process': 'bg-[#FFF3D6] text-[#D29500] rounded-full text-center px-2 py-1',
+  'Complete': 'bg-[#D3F2E3] text-[#2E8B57] rounded-full text-center px-2 py-1',
+  'Blocked': 'bg-[#FFE1DE] text-[#C0392B] rounded-full text-center px-2 py-1',
+  'Need to start': 'bg-[#E2E8F0] text-[#3C4F69] rounded-full text-center px-2 py-1'
 }
 
 const priorityStyles = {
@@ -49,147 +49,113 @@ const priorityStyles = {
 
 const Excel = () => {
   return (
-    <div className="flex flex-col border border-gray-300 font-sans">
-      {/* Header Row */}
+    <div className="flex flex-col border border-gray-200 font-sans w-fit">
       <div className="flex">
-        <div>
-          <div className="bg-white w-[32px] h-[42px]" />
-          <div className="flex items-center justify-center h-[42px] border border-gray-300 text-sm text-gray-500">#</div>
-        </div>
-
-        <div>
-          <div className="flex items-center bg-white border border-gray-300">
-            <div className="flex items-center gap-4 w-[631px] px-4 py-2 bg-[#E2E2E2]">
-              <div className="flex items-center bg-white px-2 py-1 rounded-md gap-2">
-                <MdInsertLink className="text-blue-900" />
-                <p className="text-sm">Q3 Financial Overview</p>
-              </div>
-              <LuRefreshCcw className="text-orange-500" />
+        <div className="w-[32px] h-[32px] border border-gray-200 bg-white" />
+        <div className="flex">
+          <div className="flex items-center gap-4 w-[631px] h-[32px] px-4 py-2 bg-[#E2E2E2] border border-gray-200">
+            <div className="flex items-center bg-white px-2 py-1 rounded-md gap-2">
+              <MdInsertLink className="text-blue-900" />
+              <p className="text-sm">Q3 Financial Overview</p>
             </div>
-          </div>
-          <div className="flex">
-            <div className="flex items-center bg-[#EEEEEE] w-[256px] h-[42px] px-2 gap-2 text-gray-500 font-semibold border border-gray-300">
-              <IoBagAdd />
-              <p>Job Request</p>
-            </div>
-            <div className="flex items-center bg-[#EEEEEE] w-[124px] h-[42px] px-2 gap-2 text-gray-500 font-semibold border border-gray-300">
-              <PiCalendarBlank />
-              <p>Schedule</p>
-            </div>
-            <div className="flex items-center bg-[#EEEEEE] w-[124px] h-[42px] px-2 gap-2 text-gray-500 font-semibold border border-gray-300">
-              <FaChevronCircleDown />
-              <p>Status</p>
-            </div>
-            <div className="flex items-center bg-[#EEEEEE] w-[128px] h-[42px] px-2 gap-2 text-gray-500 font-semibold border border-gray-300">
-              <HiMiniUser />
-              <p>Submitter</p>
-            </div>
+            <LuRefreshCcw className="text-orange-500" />
           </div>
         </div>
-
-        <div>
-          <div className="w-[124px] h-[46px] bg-white border border-gray-300" />
-          <div className="flex items-center bg-[#EEEEEE] w-[124px] h-[42px] px-2 gap-2 text-gray-500 font-semibold border border-gray-300">
-            <TbWorld />
-            <p>URL</p>
-          </div>
+        <div className="w-[124px] h-[32px] border border-gray-200 flex items-center justify-center bg-white">
+          <TbWorld className="text-gray-600" />
         </div>
-
-        <div>
-          <div className="flex items-center px-3 bg-[#D2E0D4] w-[124px] h-[46px] border border-gray-300">
-            <img src={shape} alt="Shape" />
-            <p>ABC</p>
-            <HiDotsHorizontal className="text-gray-500 ml-auto" />
-          </div>
-          <div className="flex items-center bg-[#E8F0E9] w-[124px] h-[42px] px-2 gap-2 text-gray-500 font-semibold border border-gray-300">
-            <BsPersonRaisedHand />
-            <p>Assigned</p>
-          </div>
+        <div className="w-[124px] h-[32px] border border-gray-200 px-3 flex items-center gap-2 bg-[#D2E0D4]">
+          <img src={shape} alt="Shape" />
+          <p>ABC</p>
+          <HiDotsHorizontal className="text-gray-500 ml-auto" />
         </div>
-
-        <div>
-          <div className="flex items-center px-8 bg-[#DCCFFC] w-[252px] h-[46px] border border-gray-300 gap-2">
-            <img src={shape} alt="Shape" />
-            <p>Answer a question</p>
-          </div>
-          <div className="flex">
-            <div className="bg-[#EAE3FC] w-[125px] h-[42px] px-2 flex items-center text-[#7F56D9] border border-gray-300 font-semibold">
-              Priority
-            </div>
-            <div className="bg-[#EAE3FC] w-[126px] h-[42px] px-2 flex items-center text-[#7F56D9] border border-gray-300 font-semibold">
-              Due Date
-            </div>
-          </div>
+        <div className="w-[300px] h-[32px] border border-gray-200 flex items-center gap-2 px-3 bg-[#DCCFFC]">
+          <img src={shape} alt="Shape" />
+          <p>Answer a question</p>
         </div>
-
-        <div>
-          <div className="flex items-center px-3 bg-[#FAC2AF] w-[124px] h-[46px] border border-gray-300">
-            <img src={shape} alt="Shape" />
-            <p>Extract</p>
-            <HiDotsHorizontal className="text-gray-500 ml-auto" />
-          </div>
-          <div className="bg-[#FFE9E0] text-[#D16A47] h-[42px] px-2 flex items-center border border-gray-300 font-semibold">
-            Est. Value
-          </div>
+        <div className="w-[150px] h-[32px] border border-gray-200 px-3 flex items-center gap-2 bg-[#FAC2AF]">
+          <img src={shape} alt="Shape" />
+          <p>Extract</p>
+          <HiDotsHorizontal className="text-gray-500 ml-auto" />
         </div>
-
-        <div>
-          <div className="flex items-center justify-center bg-[#EEEEEE] w-[122px] h-[46px] border border-gray-300">
-            <FaPlus className="text-gray-500" />
-          </div>
-          <div className="bg-[#EEEEEE] w-[124px] h-[42px] border border-gray-300 flex items-center justify-center font-semibold text-gray-500">
-        
-          </div>
+        <div className="w-[150px] h-[32px] border border-gray-200 flex items-center justify-center bg-[#EEEEEE]">
+          <FaPlus className="text-gray-500" />
         </div>
       </div>
 
-      {/* Rows */}
-      {Array.from({ length: 25 }).map((_, i) => {
+      <div className="flex">
+        <div className="w-[32px] h-[32px] border border-gray-200 flex items-center justify-center text-sm text-gray-500">#</div>
+        <div className="w-[256px] h-[32px] border border-gray-200 px-2 flex items-center gap-2 text-sm text-gray-500 font-semibold bg-[#EEEEEE]">
+          <IoBagAdd /> Job Request
+        </div>
+        <div className="w-[124px] h-[32px] border border-gray-200 px-2 flex items-center gap-2 text-sm text-gray-500 font-semibold bg-[#EEEEEE]">
+          <PiCalendarBlank /> Schedule
+        </div>
+        <div className="w-[124px] h-[32px] border border-gray-200 px-2 flex items-center gap-2 text-sm text-gray-500 font-semibold bg-[#EEEEEE]">
+          <FaChevronCircleDown /> Status
+        </div>
+        <div className="w-[128px] h-[32px] border border-gray-200 px-2 flex items-center gap-2 text-sm text-gray-500 font-semibold bg-[#EEEEEE]">
+          <HiMiniUser /> Submitter
+        </div>
+        <div className="w-[124px] h-[32px] border border-gray-200 px-2 flex items-center gap-2 text-sm text-gray-500 font-semibold bg-[#EEEEEE]">
+          <TbWorld /> URL
+        </div>
+        <div className="w-[124px] h-[32px] border border-gray-200 px-2 flex items-center gap-2 text-sm text-gray-500 font-semibold bg-[#E8F0E9]">
+          <BsPersonRaisedHand /> Assigned
+        </div>
+        <div className="w-[150px] h-[32px] border border-gray-200 px-2 flex items-center text-[#7F56D9] font-semibold bg-[#EAE3FC]">
+          Priority
+        </div>
+        <div className="w-[150px] h-[32px] border border-gray-200 px-2 flex items-center text-[#7F56D9] font-semibold bg-[#EAE3FC]">
+          Due Date
+        </div>
+        <div className="w-[150px] h-[32px] border border-gray-200 px-2 flex items-center text-[#D16A47] font-semibold bg-[#FFE9E0]">
+          Est. Value
+        </div>
+        <div className="w-[150px] h-[32px] border border-gray-200 px-2 flex items-center text-gray-500 font-semibold bg-[#EEEEEE]">
+          Remarks
+        </div>
+      </div>
+
+      {Array.from({ length: 17 }).map((_, i) => {
+        const show = i < 5
         const status = statuses[i % statuses.length]
         const priority = priorities[i % priorities.length]
-        const showData = i < 5
+
         return (
           <div className="flex" key={i}>
-            <div className="w-[32px] h-[42px] flex items-center justify-center border border-gray-300 text-sm text-gray-500">
+            <div className="w-[32px] h-[32px] border border-gray-200 flex items-center justify-center text-sm text-gray-500">
               {i + 1}
             </div>
-            <div className="w-[256px] h-[42px] border border-gray-300 px-2 flex items-center text-sm text-gray-700">
-              {showData ? jobRequests[i] : ''}
+            <div className="w-[256px] h-[32px] border border-gray-200 px-2 flex items-center text-[12px] text-gray-700">
+              {show ? jobRequests[i] : ''}
             </div>
-            <div className="w-[124px] h-[42px] border border-gray-300 px-2 flex items-center text-sm text-gray-700">
-              {showData ? submittedDates[i] : ''}
+            <div className="w-[124px] h-[32px] border border-gray-200 px-2 flex items-center text-sm text-gray-700">
+              {show ? submittedDates[i] : ''}
             </div>
-            <div className="w-[124px] h-[42px] border border-gray-300 px-2 flex items-center">
-              {showData ? (
-                <span className={`px-2 py-1 text-sm ${statusStyles[status]}`}>
-                  {status}
-                </span>
-              ) : ''}
+            <div className="w-[124px] h-[32px] border border-gray-200 flex items-center justify-center text-sm">
+              {show ? <span className={statusStyles[status]}>{status}</span> : ''}
             </div>
-            <div className="w-[127px] h-[42px] border border-gray-300 px-2 flex items-center text-sm text-gray-700">
-              {showData ? submitters[i] : ''}
+            <div className="w-[128px] h-[32px] border border-gray-200 px-2 flex items-center text-sm text-gray-700">
+              {show ? submitters[i] : ''}
             </div>
-            <div className="w-[124px] h-[42px] border border-gray-300 px-2 flex items-center text-sm text-blue-600 underline truncate">
-              {showData ? (
-                <a href={urls[i]} target="_blank" rel="noopener noreferrer">
-                  {urls[i]}
-                </a>
-              ) : ''}
+            <div className="w-[124px] h-[32px] border border-gray-200 px-2 flex items-center text-sm text-blue-600 underline truncate">
+              {show ? <a href={urls[i]} target="_blank">{urls[i]}</a> : ''}
             </div>
-            <div className="w-[124px] h-[42px] border border-gray-300 px-2 flex items-center text-sm text-gray-700">
-              {showData ? assignedTo[i] : ''}
+            <div className="w-[124px] h-[32px] border border-gray-200 px-2 flex items-center text-sm text-gray-700">
+              {show ? assignedTo[i] : ''}
             </div>
-            <div className={`w-[125px] h-[42px] border border-gray-300 px-2 flex items-center text-sm ${showData ? priorityStyles[priority] : 'text-gray-700'}`}>
-              {showData ? priority : ''}
+            <div className={`w-[150px] h-[32px] border border-gray-200 px-2 flex items-center text-sm ${show ? priorityStyles[priority] : 'text-gray-700'}`}>
+              {show ? priority : ''}
             </div>
-            <div className="w-[126px] h-[42px] border border-gray-300 px-2 flex items-center text-sm text-gray-700">
-              {showData ? dueDates[i] : ''}
+            <div className="w-[150px] h-[32px] border border-gray-200 px-2 flex items-center text-sm text-gray-700">
+              {show ? dueDates[i] : ''}
             </div>
-            <div className="w-[124px] h-[42px] border border-gray-300 px-2 flex items-center text-sm text-gray-700">
-              {showData ? values[i] : ''}
+            <div className="w-[150px] h-[32px] border border-gray-200 px-2 flex items-center text-sm text-gray-700">
+              {show ? values[i] : ''}
             </div>
-            <div className="w-[124px] h-[42px] border border-gray-300 px-2 flex items-center text-sm text-gray-700">
-              {showData ? remarks[i] : ''}
+            <div className="w-[150px] h-[32px] border border-gray-200 px-2 flex items-center text-sm text-gray-700">
+              {show ? remarks[i] : ''}
             </div>
           </div>
         )

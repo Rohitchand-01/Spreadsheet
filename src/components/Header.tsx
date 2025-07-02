@@ -3,6 +3,7 @@ import Shape from '../assets/shape.svg'
 import { HiDotsHorizontal } from 'react-icons/hi'
 import { CiSearch } from 'react-icons/ci'
 import { GoBell } from 'react-icons/go'
+import User from '../assets/User.png'
 
 const Header = () => {
   return (
@@ -32,7 +33,7 @@ const Header = () => {
           <input
             type='search'
             placeholder='Search within sheet'
-            className='pl-10 pr-4 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500'
+            className='pl-10 pr-4 py-2 text-sm border border-gray-300 rounded-md focus:outline-none'
           />
           <CiSearch className='absolute left-3 top-2.5 text-gray-400 w-4 h-4' />
         </div>
@@ -44,8 +45,8 @@ const Header = () => {
           </span>
         </div>
         <img
-          src='https://via.placeholder.com/40'
-          alt='user avatar'
+          src={User}
+          alt=''
           className='w-10 h-10 rounded-full border border-gray-300 cursor-pointer hover:border-blue-500'
         />
         <div className='flex flex-col text-sm leading-tight'>

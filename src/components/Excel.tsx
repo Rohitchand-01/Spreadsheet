@@ -198,7 +198,7 @@ const Excel: React.FC = () => {
           Est. Value
         </div>
         <div className="w-[150px] h-[32px] border border-gray-200 px-2 flex items-center text-gray-500 font-semibold bg-[#EEEEEE]">
-          Remarks
+        
         </div>
       </div>
 
@@ -240,7 +240,7 @@ const Excel: React.FC = () => {
               {show ? values[i] : ''}
             </div>
             <div className="w-[150px] h-[32px] border border-gray-200 px-2 flex items-center text-sm text-gray-700">
-              {show ? remarks[i] : ''}
+             
             </div>
           </div>
         );

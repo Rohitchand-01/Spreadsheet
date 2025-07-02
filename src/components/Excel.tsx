@@ -19,7 +19,7 @@ const jobRequests = [
 ]
 
 const submittedDates = ['15-11-2024', '28-10-2024', '05-12-2024', '10-01-2025', '25-01-2025']
-const statuses = ['In-process', 'Need to start', 'In-process', 'Complete', 'Blocked']
+const statuses: Status[] = ['In-process', 'Need to start', 'In-process', 'Complete', 'Blocked']
 const submitters = ['Aisha Patel', 'Irfan Khan', 'Mark Johnson', 'Emily Green', 'Jessica Brown']
 const urls = [
   'https://example.com/task1',
@@ -29,7 +29,7 @@ const urls = [
   'https://example.com/task5'
 ]
 const assignedTo = ['Raj Verma', 'Sara Ali', 'John Wick', 'Maya Nair', 'Dev Mehta']
-const priorities = ['High', 'Medium', 'Low']
+const priorities: Priority[] = ['High', 'Medium', 'Low']
 const dueDates = ['30-11-2024', '10-11-2024', '25-12-2024', '15-01-2025', '31-01-2025']
 const values = ['$1,200', '$900', '$1,500', '$2,000', '$800']
 const remarks = ['Urgent task', 'Follow-up needed', 'On hold', 'Review in progress', 'Ready for delivery']
@@ -119,8 +119,8 @@ const Excel = () => {
 
       {Array.from({ length: 17 }).map((_, i) => {
         const show = i < 5
-        const status = statuses[i % statuses.length]
-        const priority = priorities[i % priorities.length]
+        const status = statuses[i % statuses.length] as Status
+        const priority = priorities[i % priorities.length] as Priority
 
         return (
           <div className="flex" key={i}>

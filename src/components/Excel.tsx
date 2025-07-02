@@ -26,7 +26,6 @@ const assignedTo = ['Raj Verma', 'Sara Ali', 'John Wick', 'Maya Nair', 'Dev Meht
 const priorities: Priority[] = ['High', 'Medium', 'Low', 'High', 'Medium']; // Added more priorities to match length
 const dueDates = ['30-11-2024', '10-11-2024', '25-12-2024', '15-01-2025', '31-01-2025'];
 const values = ['$1,200', '$900', '$1,500', '$2,000', '$800'];
-const remarks = ['Urgent task', 'Follow-up needed', 'On hold', 'Review in progress', 'Ready for delivery'];
 
 // Define the types for your style mapping objects using Record<KeyType, ValueType>
 const statusStyles: Record<Status, string> = {

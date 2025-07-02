@@ -1,5 +1,5 @@
 import Excel from "./components/Excel"
-import Footer from "./components/footer"
+import Footer from "./components/Footer"
 import Header from "./components/Header"
 import SubHeader from "./components/SubHeader"
 

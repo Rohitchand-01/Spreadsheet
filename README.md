@@ -1,69 +1,68 @@
-# React + TypeScript + Vite
+# 📊 Spreadsheet UI – React Prototype
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project replicates a static spreadsheet UI using **React** and **Tailwind CSS**, as per a Figma design. It showcases job request tracking with visual grouping, colored status tags, and a scrollable tabular layout.
 
-Currently, two official plugins are available:
+## ✅ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Pixel-perfect spreadsheet layout
+- Section headers like **Financial Overview**, **ABC**, etc.
+- Colored status indicators (e.g. In-process, Complete)
+- TypeScript support with strongly typed styles
+- Icons via `react-icons`
+- Fully responsive scrollable layout with consistent row styling
 
-## Expanding the ESLint configuration
+## ⚙️ Setup Instructions
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Rohitchand-01/Spreadsheet.git
+   cd spreadsheet
+   ```
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+3. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+4. **Build for production:**
+   ```bash
+   npm run build
+   ```
+
+> Ensure you have the correct `Shape.png` image inside `src/assets/`.
+
+---
+
+## 📌 File Structure
+
+```
+src/
+├── assets/
+│   └── Shape.png
+├── components/
+│   └── Excel.tsx
+│   └── Header.tsx
+└── main.tsx / App.tsx
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## ⚠️ Trade-offs
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **No dynamic data**: This UI is static and ideal for prototyping. It does not support editing or fetching data from an API.
+- **Fixed column widths**: Adjusted for screen fit; may need tweaking for responsiveness.
+- **Scrollable UI**: The table does not wrap or shrink; it scrolls horizontally on small screens using `overflow-x`.
+- **No accessibility enhancements** (e.g., ARIA labels) added yet.
+
+---
+
+## 📦 Tech Stack
+
+- React + TypeScript
+- Tailwind CSS
+- React Icons

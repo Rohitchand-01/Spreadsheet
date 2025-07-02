@@ -43,9 +43,14 @@ const priorityStyles: Record<Priority, string> = {
 };
 
 const Excel: React.FC = () => {
-  // Inline SVG for the 'Shape' placeholder (from previous version)
-  const ShapeIcon = () => (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-500">
+  // Define a type for the common SVG icon props
+  interface SvgIconProps {
+    className?: string;
+  }
+
+  // Inline SVG for the 'Shape' placeholder
+  const ShapeIcon: React.FC<SvgIconProps> = ({ className }) => (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
       <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
       <path d="M2 17l10 5 10-5"></path>
       <path d="M2 12l10 5 10-5"></path>
@@ -53,15 +58,15 @@ const Excel: React.FC = () => {
   );
 
   // Inline SVGs for all react-icons
-  const MdInsertLinkIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-900">
+  const MdInsertLinkIcon: React.FC<SvgIconProps> = ({ className }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
       <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07L10 3.46l-1.54 1.54"></path>
       <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07L14 20.54l1.54-1.54"></path>
     </svg>
   );
 
-  const LuRefreshCcwIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-orange-500">
+  const LuRefreshCcwIcon: React.FC<SvgIconProps> = ({ className }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
       <path d="M21.5 2v6h-6"></path>
       <path d="M2.5 22v-6h6"></path>
       <path d="M22 11.5a10 10 0 0 1-20 0"></path>
@@ -69,22 +74,22 @@ const Excel: React.FC = () => {
     </svg>
   );
 
-  const HiDotsHorizontalIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="text-gray-500">
+  const HiDotsHorizontalIcon: React.FC<SvgIconProps> = ({ className }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className={className}>
       <circle cx="12" cy="12" r="1"></circle>
       <circle cx="19" cy="12" r="1"></circle>
       <circle cx="5" cy="12" r="1"></circle>
     </svg>
   );
 
-  const FaPlusIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="text-gray-500">
+  const FaPlusIcon: React.FC<SvgIconProps> = ({ className }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className={className}>
       <path d="M12 4.5V19.5M4.5 12H19.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
     </svg>
   );
 
-  const IoBagAddIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-500">
+  const IoBagAddIcon: React.FC<SvgIconProps> = ({ className }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
       <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
       <line x1="3" y1="6" x2="21" y2="6"></line>
       <path d="M16 10a4 4 0 0 1-8 0"></path>
@@ -93,8 +98,8 @@ const Excel: React.FC = () => {
     </svg>
   );
 
-  const PiCalendarBlankIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-500">
+  const PiCalendarBlankIcon: React.FC<SvgIconProps> = ({ className }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
       <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
       <line x1="16" y1="2" x2="16" y2="6"></line>
       <line x1="8" y1="2" x2="8" y2="6"></line>
@@ -102,28 +107,28 @@ const Excel: React.FC = () => {
     </svg>
   );
 
-  const FaChevronCircleDownIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="text-gray-500">
+  const FaChevronCircleDownIcon: React.FC<SvgIconProps> = ({ className }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className={className}>
       <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-.71 9.29l-3.59 3.59c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0L12 13.41l2.89 2.89c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41l-3.59-3.59c-.39-.39-1.02-.39-1.41 0z"/>
     </svg>
   );
 
-  const HiMiniUserIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="text-gray-500">
+  const HiMiniUserIcon: React.FC<SvgIconProps> = ({ className }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className={className}>
       <path d="M12 2a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 14c-4.42 0-8 1.79-8 4v2h16v-2c0-2.21-3.58-4-8-4z"/>
     </svg>
   );
 
-  const TbWorldIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-600">
+  const TbWorldIcon: React.FC<SvgIconProps> = ({ className }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
       <circle cx="12" cy="12" r="10"></circle>
       <line x1="2" y1="12" x2="22" y2="12"></line>
       <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
     </svg>
   );
 
-  const BsPersonRaisedHandIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="text-gray-500">
+  const BsPersonRaisedHandIcon: React.FC<SvgIconProps> = ({ className }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className={className}>
       <path d="M12 2c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm-2 14c-2.21 0-4 1.79-4 4v2h12v-2c0-2.21-1.79-4-4-4H10zm10-4h-2V7h2V4h-2V2h-2v2h-2v3h-2v5h-2v2h-2v2h-2v2h-2v2h-2v2h-2v2h-2v-2h2v-2h2v-2h2v-2h2v-2h2v-2h2v-2h2v-2z"/>
     </svg>
   );
@@ -135,53 +140,53 @@ const Excel: React.FC = () => {
         <div className="flex">
           <div className="flex items-center gap-4 w-[631px] h-[32px] px-4 py-2 bg-[#E2E2E2] border border-gray-200">
             <div className="flex items-center bg-white px-2 py-1 rounded-md gap-2">
-              <MdInsertLinkIcon />
+              <MdInsertLinkIcon className="text-blue-900" />
               <p className="text-sm">Q3 Financial Overview</p>
             </div>
-            <LuRefreshCcwIcon />
+            <LuRefreshCcwIcon className="text-orange-500" />
           </div>
         </div>
         <div className="w-[124px] h-[32px] border border-gray-200 flex items-center justify-center bg-white">
-          <TbWorldIcon />
+          <TbWorldIcon className="text-gray-600" />
         </div>
         <div className="w-[124px] h-[32px] border border-gray-200 px-3 flex items-center gap-2 bg-[#D2E0D4]">
-          <ShapeIcon />
+          <ShapeIcon className="text-gray-500" />
           <p>ABC</p>
           <HiDotsHorizontalIcon className="text-gray-500 ml-auto" />
         </div>
         <div className="w-[300px] h-[32px] border border-gray-200 flex items-center gap-2 px-3 bg-[#DCCFFC]">
-          <ShapeIcon />
+          <ShapeIcon className="text-gray-500" />
           <p>Answer a question</p>
         </div>
         <div className="w-[150px] h-[32px] border border-gray-200 px-3 flex items-center gap-2 bg-[#FAC2AF]">
-          <ShapeIcon />
+          <ShapeIcon className="text-gray-500" />
           <p>Extract</p>
           <HiDotsHorizontalIcon className="text-gray-500 ml-auto" />
         </div>
         <div className="w-[150px] h-[32px] border border-gray-200 flex items-center justify-center bg-[#EEEEEE]">
-          <FaPlusIcon />
+          <FaPlusIcon className="text-gray-500" />
         </div>
       </div>
 
       <div className="flex">
         <div className="w-[32px] h-[32px] border border-gray-200 flex items-center justify-center text-sm text-gray-500">#</div>
         <div className="w-[256px] h-[32px] border border-gray-200 px-2 flex items-center gap-2 text-sm text-gray-500 font-semibold bg-[#EEEEEE]">
-          <IoBagAddIcon /> Job Request
+          <IoBagAddIcon className="text-gray-500" /> Job Request
         </div>
         <div className="w-[124px] h-[32px] border border-gray-200 px-2 flex items-center gap-2 text-sm text-gray-500 font-semibold bg-[#EEEEEE]">
-          <PiCalendarBlankIcon /> Schedule
+          <PiCalendarBlankIcon className="text-gray-500" /> Schedule
         </div>
         <div className="w-[124px] h-[32px] border border-gray-200 px-2 flex items-center gap-2 text-sm text-gray-500 font-semibold bg-[#EEEEEE]">
-          <FaChevronCircleDownIcon /> Status
+          <FaChevronCircleDownIcon className="text-gray-500" /> Status
         </div>
         <div className="w-[128px] h-[32px] border border-gray-200 px-2 flex items-center gap-2 text-sm text-gray-500 font-semibold bg-[#EEEEEE]">
-          <HiMiniUserIcon /> Submitter
+          <HiMiniUserIcon className="text-gray-500" /> Submitter
         </div>
         <div className="w-[124px] h-[32px] border border-gray-200 px-2 flex items-center gap-2 text-sm text-gray-500 font-semibold bg-[#EEEEEE]">
-          <TbWorldIcon /> URL
+          <TbWorldIcon className="text-gray-500" /> URL
         </div>
         <div className="w-[124px] h-[32px] border border-gray-200 px-2 flex items-center gap-2 text-sm text-gray-500 font-semibold bg-[#E8F0E9]">
-          <BsPersonRaisedHandIcon /> Assigned
+          <BsPersonRaisedHandIcon className="text-gray-500" /> Assigned
         </div>
         <div className="w-[150px] h-[32px] border border-gray-200 px-2 flex items-center text-[#7F56D9] font-semibold bg-[#EAE3FC]">
           Priority

@@ -1,15 +1,18 @@
-import React from 'react';
-
 const Header = () => {
+  // Define a type for the common SVG icon props
+  interface SvgIconProps {
+    className?: string;
+  }
+
   // Inline SVG for PiGreaterThanThin
-  const PiGreaterThanThinIcon = ({ className }: { className?: string }) => (
+  const PiGreaterThanThinIcon: React.FC<SvgIconProps> = ({ className }) => (
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
       <path d="M9 18l6-6-6-6"></path>
     </svg>
   );
 
   // Inline SVG for HiDotsHorizontal
-  const HiDotsHorizontalIcon = ({ className }: { className?: string }) => (
+  const HiDotsHorizontalIcon: React.FC<SvgIconProps> = ({ className }) => (
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className={className}>
       <circle cx="12" cy="12" r="1"></circle>
       <circle cx="19" cy="12" r="1"></circle>
@@ -18,7 +21,7 @@ const Header = () => {
   );
 
   // Inline SVG for CiSearch
-  const CiSearchIcon = ({ className }: { className?: string }) => (
+  const CiSearchIcon: React.FC<SvgIconProps> = ({ className }) => (
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
       <circle cx="11" cy="11" r="8"></circle>
       <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
@@ -26,7 +29,7 @@ const Header = () => {
   );
 
   // Inline SVG for GoBell
-  const GoBellIcon = ({ className }: { className?: string }) => (
+  const GoBellIcon: React.FC<SvgIconProps> = ({ className }) => (
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
       <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
       <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
@@ -34,7 +37,7 @@ const Header = () => {
   );
 
   // Inline SVG for the 'Shape' placeholder (from previous context)
-  const ShapeIcon = ({ className }: { className?: string }) => (
+  const ShapeIcon: React.FC<SvgIconProps> = ({ className }) => (
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
       <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
       <path d="M2 17l10 5 10-5"></path>
